@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
         </div>
     </div>
 
-    <div class="big-container">
+    <div id="app" class="big-container">
         <div class="col-left">
             <div class="left-header">
                 <img src="img/img/avatar_2.jpg" alt="">
@@ -51,80 +52,18 @@
             </div>
 
             <ul>
-                <li>
-                    <div class="contact">
-                        <img src="img/img/avatar_3.jpg" alt="">
-                        <div class="contact-text">
-                            <h5>Michele</h5>
-                            <p>ok...</p>
-                        </div> 
-                        <div class="date">
-                            20/12/2021 10:22:21
-                        </div>
-                    </div>
-                </li>
 
-                <li>
+                <li v-for="(contact,index) in contacts" >
                     <div class="contact">
-                        <img src="img/img/avatar_4.jpg" alt="">
+                        <img :src="`img/img/avatar${contact.avatar}.jpg`" alt="">
                         <div class="contact-text">
-                            <h5>Fabio</h5>
-                            <p>ok...</p>
+                            <h5>
+                                {{contact.name}}
+                            </h5>
+                            <p>{{ contact.messages[0].text }}</p>
                         </div> 
                         <div class="date">
-                            20/12/2021 10:22:21
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="contact">
-                        <img src="img/img/avatar_5.jpg" alt="">
-                        <div class="contact-text">
-                            <h5>Mariano</h5>
-                            <p>ok...</p>
-                        </div> 
-                        <div class="date">
-                            20/12/2021 10:22:21
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="contact">
-                        <img src="img/img/avatar_6.jpg" alt="">
-                        <div class="contact-text">
-                            <h5>Luisa</h5>
-                            <p>ok...</p>
-                        </div> 
-                        <div class="date">
-                            20/12/2021 10:22:21
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="contact">
-                        <img src="img/img/avatar_8.jpg" alt="">
-                        <div class="contact-text">
-                            <h5>Mario</h5>
-                            <p>ok...</p>
-                        </div> 
-                        <div class="date">
-                            20/12/2021 10:22:21
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="contact">
-                        <img src="img/img/avatar_7.jpg" alt="">
-                        <div class="contact-text">
-                            <h5>Jesus</h5>
-                            <p>ok...</p>
-                        </div> 
-                        <div class="date">
-                            20/12/2021 10:22:21
+                            {{ contact.messages[0].date }}
                         </div>
                     </div>
                 </li>
