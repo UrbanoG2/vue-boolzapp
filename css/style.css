@@ -48,6 +48,7 @@ html {
     height: 100%;
     float: right;
     background-image: url(/img/img/mine.jpg);
+    
 }
 
 .left-header {
@@ -197,9 +198,6 @@ ul {
 /* right column rules */
 
 
-.col-right {
-    background-image: url(/img/img/mine.jpg);
-}
 
 .profile {
     display: flex;
@@ -218,4 +216,41 @@ ul {
     width: 8%;
     border-radius: 50%;
     margin-left:5px;
+}
+
+.profile-text p {
+    font-size: 10px;
+    margin-left: 10px;
+    color: lightgrey;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons i {
+    margin-right: 7px;
+}
+
+
+.sent {
+    width: 40%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 12px;
+    background-color: rgb(93, 233, 93);
+    margin-right: 4em;
+    margin-top: 2em;
+    margin-left: 50%;
+}
+
+.received {
+    width: 40%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 12px;
+    background-color: white;
+    margin-top: 2em;
+    margin-left: 4em;
 }
