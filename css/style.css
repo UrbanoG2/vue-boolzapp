@@ -41,15 +41,31 @@ html {
     height: 100%;
     background-color: white;
     float: left;
+    overflow-y: auto;
 }
 
 .col-right {
     width: 65%;
     height: 100%;
+    padding-bottom: 8%;
     float: right;
     background-image: url(/img/img/mine.jpg);
-    
+    overflow-y: auto;
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(175, 175, 175);
+    border-radius: 10px;
+  }
+
 
 .left-header {
     width: 100%;
@@ -234,6 +250,10 @@ ul {
 }
 
 
+/* .messages {
+    overflow-y: auto;
+} */
+
 .sent {
     width: 40%;
     border-radius: 10px;
@@ -253,4 +273,44 @@ ul {
     background-color: white;
     margin-top: 2em;
     margin-left: 4em;
+}
+
+
+.col-footer {
+    width: 65%;
+    height: 8%;
+    background-color: rgb(226, 226, 226);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.send-message input {
+    width: 375px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.send-message input:focus{
+    outline: none;
+}
+
+.emoji {
+    margin-left: 1.5em;
+    color: grey;
+    font-size: 20px;
+}
+
+.rec {
+    margin-right: 1.5em;
+    color: grey;
+    font-size: 20px;
+}
+
+.emoji:hover,
+.rec:hover {
+    cursor: pointer;
 }
