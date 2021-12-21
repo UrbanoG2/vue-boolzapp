@@ -60,7 +60,9 @@
                             <h5>
                                 {{contact.name}}
                             </h5>
-                            <p>{{ contact.messages[0].text }}</p>
+                            <p>
+                                {{ contact.messages[0].text }}
+                            </p>
                         </div> 
                         <div class="date">
                             {{ contact.messages[0].date }}
@@ -90,40 +92,13 @@
                 </div>
             </div>
 
-            <div class="messages">
-                <p class="received" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi 
+            <div 
+            v-for="(message, index) in contacts[0].messages"
+            class="messages">
+                <p :class="message.status" >
+                    {{ message.text }}
                 </p>
 
-                <p class="sent" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi laudantium atque 
-                </p>
-
-                <p class="received" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi 
-                </p>
-
-                <p class="sent" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi laudantium atque 
-                </p>
-
-                <p class="received" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi 
-                </p>
-
-                <p class="sent" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi laudantium atque 
-                </p>
-
-                <p class="received" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi 
-                </p>
-
-                <p class="sent" >
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus assumenda modi laudantium atque 
-                </p>
-
-                
             </div>
 
             <footer class="col-footer">
