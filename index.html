@@ -79,10 +79,12 @@
                 <div class="profile">
                     <img src="img/img/avatar_2.jpg" alt="">
                 <div class="profile-text">
-                    <h5 class="username">Dottor Sistanuri</h5>
+                    <h5 class="username">
+                        User Name
+                    </h5>
 
                     <p>
-                        Ultimo accesso oggi il 20/12/2021 alle 13:52 
+                       Ultimo accesso oggi il 20/12/2021 alle 
                     </p>
                 </div>
                 </div>
@@ -98,6 +100,10 @@
             class="messages">
                 <p :class="message.status" >
                     {{ message.text }} 
+
+                    <span class="small-date" >
+                        {{ message.date }}
+                    </span>
                 </p>
 
                

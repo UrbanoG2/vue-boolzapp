@@ -330,3 +330,9 @@ ul {
 .rec:hover {
     cursor: pointer;
 }
+
+.small-date {
+    font-size: 6px;
+    color: grey;
+    display: inline-block;
+}
