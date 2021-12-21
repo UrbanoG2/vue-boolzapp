@@ -2,6 +2,8 @@ var app = new Vue({
   el: '#app',
   data: {
 
+    counter: 0,
+
     // avatarComplete = img/img/avatar + this.avatar .jpg ,
     contacts: [
       {
@@ -99,11 +101,11 @@ var app = new Vue({
   // Click sul contatto mostra la conversazione del contatto cliccato
 
   methods: {
-    
+    getCounter: function (index) {
+      this.counter = index;
+      console.log(this.counter);
+    }
   },
-
- 
-
 
 })
 

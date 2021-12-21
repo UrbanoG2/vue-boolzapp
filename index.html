@@ -50,22 +50,23 @@
                 <i class="fas fa-search"></i>
                 <input class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
-
+            <!-- [counter] va messo dopo contacts -->
             <ul>
 
                 <li v-for="(contact,index) in contacts" >
-                    <div class="contact">
+                    <div @click="getCounter(index)" class="contact">
                         <img :src="`img/img/avatar${contact.avatar}.jpg`" alt="">
                         <div class="contact-text">
                             <h5>
                                 {{contact.name}}
                             </h5>
+
                             <p>
-                                {{ contact.messages[0].text }}
+                                {{ contact.messages[contact.messages.length - 1].text }}
                             </p>
                         </div> 
                         <div class="date">
-                            {{ contact.messages[0].date }}
+                            {{ contact.messages[contact.messages.length - 1].date }}
                         </div>
                     </div>
                 </li>
@@ -93,12 +94,13 @@
             </div>
 
             <div 
-            v-for="(message, index) in contacts[0].messages"
+            v-for="(message, index) in contacts[counter].messages"
             class="messages">
                 <p :class="message.status" >
-                    {{ message.text }}
+                    {{ message.text }} 
                 </p>
 
+               
             </div>
 
             <footer class="col-footer">
