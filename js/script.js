@@ -1,7 +1,8 @@
 var app = new Vue({
   el: '#app',
   data: {
-
+    
+    newMessage: "",
     counter: 0,
 
     // avatarComplete = img/img/avatar + this.avatar .jpg ,
@@ -101,10 +102,33 @@ var app = new Vue({
   // Click sul contatto mostra la conversazione del contatto cliccato
 
   methods: {
+
     getCounter: function (index) {
       this.counter = index;
       console.log(this.counter);
-    }
+    },
+
+    // Milestone 3
+    // Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+    // Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+
+    pushMessage: function () {
+      this.contacts[this.counter].messages.push({
+        text: this.newMessage,
+        date: "",
+        status: "sent",
+      });
+
+      setTimeout(() => {
+        this.contacts[this.counter].messages.push({
+          text: "Eh che ne so fratopo",
+          date: "",
+          status: "received",
+        });
+      }, 3000)
+    },
+
   },
 
 })

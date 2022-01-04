@@ -334,5 +334,5 @@ ul {
 .small-date {
     font-size: 6px;
     color: grey;
-    display: inline-block;
+    display: block;
 }

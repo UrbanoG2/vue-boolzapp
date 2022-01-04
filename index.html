@@ -80,11 +80,11 @@
                     <img src="img/img/avatar_2.jpg" alt="">
                 <div class="profile-text">
                     <h5 class="username">
-                        User Name
+                        {{contacts[counter].name}}
                     </h5>
 
                     <p>
-                       Ultimo accesso oggi il 20/12/2021 alle 
+                        {{  contacts[counter].messages[contacts[counter].messages.length -1].date }}
                     </p>
                 </div>
                 </div>
@@ -114,7 +114,7 @@
                     <i class="far fa-smile"></i>
                 </div>
                 <div class="send-message">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="pushMessage" v-model="newMessage" type="text" placeholder="Scrivi un messaggio">
                 </div>
                 <div class="rec">
                     <i class="fas fa-microphone"></i>
