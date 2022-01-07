@@ -61,11 +61,12 @@
                                 {{contact.name}}
                             </h5>
 
-                            <p>
+                            <p v-if="contact.messages[contact.messages.length - 1] != null">
+
                                 {{ contact.messages[contact.messages.length - 1].text }}
                             </p>
                         </div> 
-                        <div class="date">
+                        <div v-if="contact.messages[contact.messages.length - 1] != null" class="date">
                             {{ contact.messages[contact.messages.length - 1].date }}
                         </div>
                     </div>
@@ -83,7 +84,8 @@
                         {{contacts[counter].name}}
                     </h5>
 
-                    <p>
+                    <p v-if ="contacts[counter].messages[contacts[counter].messages.length -1] != null">
+
                         {{  contacts[counter].messages[contacts[counter].messages.length -1].date }}
                     </p>
                 </div>
