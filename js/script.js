@@ -3,6 +3,8 @@ var app = new Vue({
   data: {
     
     newMessage: "",
+    research:"",
+    
     counter: 0,
 
     // avatarComplete = img/img/avatar + this.avatar .jpg ,
@@ -16,16 +18,19 @@ var app = new Vue({
             date: "10/01/2020 15:30:55",
             text: "Hai portato a spasso il cane?",
             status: "sent",
+            dropdown: false,
           },
           {
             date: "10/01/2020 15:50:00",
             text: "Ricordati di dargli da mangiare",
             status: "sent",
+            dropdown: false,
           },
           {
             date: "10/01/2020 16:15:22",
             text: "Tutto fatto!",
             status: "received",
+            dropdown: false,
           },
         ],
       },
@@ -38,16 +43,19 @@ var app = new Vue({
             date: "20/03/2020 16:30:00",
             text: "Ciao come stai?",
             status: "sent",
+            dropdown: false,
           },
           {
             date: "20/03/2020 16:30:55",
             text: "Bene grazie! Stasera ci vediamo?",
             status: "received",
+            dropdown: false,
           },
           {
             date: "20/03/2020 16:35:00",
             text: "Mi piacerebbe ma devo andare a fare la spesa.",
             status: "sent",
+            dropdown: false,
           },
         ],
       },
@@ -61,16 +69,19 @@ var app = new Vue({
             date: "28/03/2020 10:10:40",
             text: "La Marianna va in campagna",
             status: "received",
+            dropdown: false,
           },
           {
             date: "28/03/2020 10:20:10",
             text: "Sicuro di non aver sbagliato chat?",
             status: "sent",
+            dropdown: false,
           },
           {
             date: "28/03/2020 16:15:22",
             text: "Ah scusa!",
             status: "received",
+            dropdown: false,
           },
         ],
       },
@@ -83,11 +94,13 @@ var app = new Vue({
             date: "10/01/2020 15:30:55",
             text: "Lo sai che ha aperto una nuova pizzeria?",
             status: "sent",
+            dropdown: false,
           },
           {
             date: "10/01/2020 15:50:00",
             text: "Si, ma preferirei andare al cinema",
             status: "received",
+            dropdown: false,
           },
         ],
       },
@@ -118,19 +131,54 @@ var app = new Vue({
         text: this.newMessage,
         date: "",
         status: "sent",
+        dropdown: false,
       });
+
+      this.newMessage = "",
 
       setTimeout(() => {
         this.contacts[this.counter].messages.push({
-          text: "Eh che ne so fratopo",
+          text: "tutto regolare fratopo",
           date: "",
           status: "received",
+          dropdown: false,
         });
       }, 3000)
     },
 
+
+    //Milestone 4
+    // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+
+
+    search: function () {
+      this.contacts.forEach(element => {
+        if (element.name.toLowerCase().includes(this.research.toLowerCase())) {
+          element.visible = true;
+        } else {
+          element.visible = false;
+        }
+      });
+    },
+
+    // Milestone 5
+    // Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+
+   showDropdown : function () {
+     this.contacts[messages.dropdown] = !this.contacts[messages.dropdown]
+   },
+
+   deleteMessage: function (index) {
+    this.contacts[this.counter].messages.splice(index, 1)
+  }
+
   },
 
-})
+  
+
+
+
+},
+)
 
 

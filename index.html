@@ -48,12 +48,12 @@
 
             <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input @keyup="search" v-model="research" class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <!-- [counter] va messo dopo contacts -->
             <ul>
 
-                <li v-for="(contact,index) in contacts" >
+                <li v-if="contact.visible == true" v-for="(contact,index) in contacts" >
                     <div @click="getCounter(index)" class="contact">
                         <img :src="`img/img/avatar${contact.avatar}.jpg`" alt="">
                         <div class="contact-text">
@@ -101,10 +101,20 @@
                 <p :class="message.status" >
                     {{ message.text }} 
 
+                    <i @click="message.dropdown = !message.dropdown" class="fas fa-chevron-down down"></i>
+
+                    <span v-show="message.dropdown" class="dropdown">
+                        <span @click="deleteMessage(index)" class="delete">
+                            Delete Message
+                        </span>
+                    </span>
+
                     <span class="small-date" >
                         {{ message.date }}
                     </span>
                 </p>
+
+                
 
                
             </div>

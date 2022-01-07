@@ -264,6 +264,7 @@ ul {
 .messages {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .sent {
@@ -335,4 +336,26 @@ ul {
     font-size: 6px;
     color: grey;
     display: block;
+}
+
+
+.down {
+    display: inline-block;
+}
+
+.down:hover {
+    cursor: pointer;
+}
+
+.dropdown {
+   border: 1px solid rgba(0, 0, 0, 0.428);
+   display: inline-block;
+   width: 40%;
+   background-color: white;
+   position: absolute;
+   padding: 15px;
+}
+
+.delete {
+    cursor: pointer;
 }
